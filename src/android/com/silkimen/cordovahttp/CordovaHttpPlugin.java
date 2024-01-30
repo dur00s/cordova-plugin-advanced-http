@@ -64,7 +64,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
 
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext)
-      throws JSONException {
+    throws JSONException {
 
     if (action == null) {
       return false;
@@ -111,7 +111,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
   }
 
   private boolean executeHttpRequestWithoutData(final String method, final JSONArray args,
-      final CallbackContext callbackContext) throws JSONException {
+                                                final CallbackContext callbackContext) throws JSONException {
 
     String url = args.getString(0);
     JSONObject headers = args.getJSONObject(1);
@@ -124,7 +124,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
     CordovaObservableCallbackContext observableCallbackContext = new CordovaObservableCallbackContext(callbackContext, reqId);
 
     CordovaHttpOperation request = new CordovaHttpOperation(method.toUpperCase(), url, headers, connectTimeout, readTimeout,
-        followRedirect, responseType, this.tlsConfiguration, observableCallbackContext);
+      followRedirect, responseType, this.tlsConfiguration, observableCallbackContext);
 
     startRequest(reqId, observableCallbackContext, request);
 
@@ -132,7 +132,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
   }
 
   private boolean executeHttpRequestWithData(final String method, final JSONArray args,
-      final CallbackContext callbackContext) throws JSONException {
+                                             final CallbackContext callbackContext) throws JSONException {
 
     String url = args.getString(0);
     Object data = args.get(1);
@@ -147,7 +147,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
     CordovaObservableCallbackContext observableCallbackContext = new CordovaObservableCallbackContext(callbackContext, reqId);
 
     CordovaHttpOperation request = new CordovaHttpOperation(method.toUpperCase(), url, serializer, data, headers,
-        connectTimeout, readTimeout, followRedirect, responseType, this.tlsConfiguration, observableCallbackContext);
+      connectTimeout, readTimeout, followRedirect, responseType, this.tlsConfiguration, observableCallbackContext);
 
     startRequest(reqId, observableCallbackContext, request);
 
@@ -169,7 +169,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
     CordovaObservableCallbackContext observableCallbackContext = new CordovaObservableCallbackContext(callbackContext, reqId);
 
     CordovaHttpUpload upload = new CordovaHttpUpload(url, headers, filePaths, uploadNames, connectTimeout, readTimeout, followRedirect,
-        hasProgressCallback, responseType, this.tlsConfiguration, this.cordova.getActivity().getApplicationContext(), observableCallbackContext);
+      hasProgressCallback, responseType, this.tlsConfiguration, this.cordova.getActivity().getApplicationContext(), observableCallbackContext);
 
     startRequest(reqId, observableCallbackContext, upload);
 
@@ -188,7 +188,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
     CordovaObservableCallbackContext observableCallbackContext = new CordovaObservableCallbackContext(callbackContext, reqId);
 
     CordovaHttpDownload download = new CordovaHttpDownload(url, headers, filePath, connectTimeout, readTimeout,
-        followRedirect, this.tlsConfiguration, observableCallbackContext);
+      followRedirect, this.tlsConfiguration, observableCallbackContext);
 
     startRequest(reqId, observableCallbackContext, download);
 
@@ -205,7 +205,7 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
 
   private boolean setServerTrustMode(final JSONArray args, final CallbackContext callbackContext) throws JSONException {
     CordovaServerTrust runnable = new CordovaServerTrust(args.getString(0), this.cordova.getActivity(),
-        this.tlsConfiguration, callbackContext);
+      this.tlsConfiguration, callbackContext);
 
     cordova.getThreadPool().execute(runnable);
 
@@ -216,8 +216,8 @@ public class CordovaHttpPlugin extends CordovaPlugin implements Observer {
     byte[] pkcs = args.isNull(2) ? null : Base64.decode(args.getString(2), Base64.DEFAULT);
 
     CordovaClientAuth runnable = new CordovaClientAuth(args.getString(0), args.isNull(1) ? null : args.getString(1),
-        pkcs, args.getString(3), this.cordova.getActivity(), this.cordova.getActivity().getApplicationContext(),
-        this.tlsConfiguration, callbackContext);
+      pkcs, args.getString(3), this.cordova.getActivity(), this.cordova.getActivity().getApplicationContext(),
+      this.tlsConfiguration, callbackContext);
 
     cordova.getThreadPool().execute(runnable);
 

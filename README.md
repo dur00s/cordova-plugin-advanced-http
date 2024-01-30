@@ -5,7 +5,7 @@ Cordova Advanced HTTP
 [![downloads/month](https://img.shields.io/npm/dm/cordova-plugin-advanced-http.svg)](https://www.npmjs.com/package/cordova-plugin-advanced-http)
 
 [![Travis Build Status](https://img.shields.io/travis/com/silkimen/cordova-plugin-advanced-http/master?label=Travis%20CI)](https://app.travis-ci.com/silkimen/cordova-plugin-advanced-http)
-[![GitHub Build Status](https://img.shields.io/github/actions/workflow/status/silkimen/cordova-plugin-advanced-http/.github/workflows/ci.yml?branch=master)](https://github.com/silkimen/cordova-plugin-advanced-http/actions)
+[![GitHub Build Status](https://img.shields.io/github/workflow/status/silkimen/cordova-plugin-advanced-http/Cordova%20HTTP%20Plugin%20CI/master?label=GitHub%20Actions)](https://github.com/silkimen/cordova-plugin-advanced-http/actions)
 
 
 Cordova / Phonegap plugin for communicating with HTTP servers.  Supports iOS, Android and [Browser](#browserSupport).
@@ -14,10 +14,10 @@ This is a fork of [Wymsee's Cordova-HTTP plugin](https://github.com/wymsee/cordo
 
 ## Advantages over Javascript requests
 
- - SSL / TLS Pinning
- - CORS restrictions do not apply
- - X.509 client certificate based authentication
- - Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)
+- SSL / TLS Pinning
+- CORS restrictions do not apply
+- X.509 client certificate based authentication
+- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)
 
 ## Updates
 
@@ -505,9 +505,9 @@ Following features are *not* supported:
 
 This plugin utilizes some awesome open source libraries:
 
- - iOS - [AFNetworking](https://github.com/AFNetworking/AFNetworking) (MIT licensed)
- - Android - [http-request](https://github.com/kevinsawicki/http-request) (MIT licensed)
- - Cookie handling - [tough-cookie](https://github.com/salesforce/tough-cookie) (BSD-3-Clause licensed)
+- iOS - [AFNetworking](https://github.com/AFNetworking/AFNetworking) (MIT licensed)
+- Android - [http-request](https://github.com/kevinsawicki/http-request) (MIT licensed)
+- Cookie handling - [tough-cookie](https://github.com/salesforce/tough-cookie) (BSD-3-Clause licensed)
 
 We made a few modifications to the networking libraries.
 

@@ -8,7 +8,7 @@ module.exports = function init(global, jsUtil, cookieHandler, messages, base64, 
   var nextRequestId = (function(){
     var currReqId = 0;
     return function nextRequestId() {
-        return ++currReqId;
+      return ++currReqId;
     }
   })();
 
